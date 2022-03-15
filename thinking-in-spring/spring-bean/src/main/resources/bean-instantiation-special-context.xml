@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--  测试bean的实例化的特殊方式  -->
+
+    <!--  配置 ServiceLoaderFactoryBean  -->
+    <bean id="userFacotoryServiceLoader" class="org.springframework.beans.factory.serviceloader.ServiceLoaderFactoryBean">
+        <property name="serviceType" value="org.geekbang.bean.instantiation.UserFactory"/>
+    </bean>
+
+
+</beans>

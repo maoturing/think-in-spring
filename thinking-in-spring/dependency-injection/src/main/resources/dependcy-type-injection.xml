@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--  查看基础类型注入时的类型转换  -->
+    <!--  查看集合类型注入时的类型转换  -->
+    <bean id="docter" class="org.geekbang.dependency.injection.type.Docter">
+        <property name="id" value="1"/>
+        <property name="name" value="tracccer"/>
+        <property name="city" value="XIAN"/>
+        <property name="workCitys" value="XIAN,BEIJING"/>
+<!--        <property name="lifeCitys" value="HANGZHOU,XIAN"/>-->
+        <!-- 与上面的配置方式作用一样 -->
+        <property name="lifeCitys">
+            <list>
+                <value>HANGZHOU</value>
+                <value>BEIJING</value>
+            </list>
+        </property>
+
+        <property name="resource" value="user.properties"/>
+    </bean>
+
+</beans>

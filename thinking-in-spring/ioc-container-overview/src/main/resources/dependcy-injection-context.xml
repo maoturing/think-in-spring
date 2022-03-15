@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+
+    <!--  通过import复用bean  -->
+    <import resource="dependcy-lookup-context.xml"/>
+
+    <!--  手动配置  -->
+<!--    <bean id="userRepository" class="org.geekbang.ioc.overview.injection.repository.UserRepository">-->
+
+<!--        <property name="users">-->
+<!--            <util:list>-->
+<!--                <ref bean="superUser"/>-->
+<!--                <ref bean="user"/>-->
+<!--            </util:list>-->
+<!--        </property>-->
+<!--    </bean>-->
+
+    <!--  自动绑定, 比手动配置更加简洁, 有新的User对象也能自动绑定到集合 -->
+    <bean id="userRepository" class="org.geekbang.ioc.overview.injection.repository.UserRepository"
+        autowire="byType"> <!--  Auto-Wiring 根据类型自动绑定 -->
+        <!-- 不需要手动配置, 可以绑定所有 User 类型的 bean  -->
+
+    </bean>
+</beans>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--  测试bean的实例化  -->
+
+    <!--  通过静态工厂方法 factory-method 实例化 bean  -->
+    <bean id="user-by-static-method" class="org.geekbang.ioc.overview.lookup.domain.User"
+          factory-method="createUser"/>
+
+    <!--  通过bean工厂方法 factory-bean 实例化 bean -->
+    <bean id="user-by-factory-method" factory-bean="userFactory" factory-method="createUser" />
+    <!--  注册 bean 工厂到容器  -->
+    <bean id="userFactory" class="org.geekbang.bean.instantiation.DefaultUserFactory" />
+
+    <!--  通过FactoryBean 实例化 bean  -->
+    <bean id="user-by-factory-bean" class="org.geekbang.bean.instantiation.UserFactoryBean"/>
+</beans>

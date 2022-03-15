@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--  设置属性源，填充占位符  -->
+<!--    <context:property-placeholder location="user.properties"/>-->
+
+    <!--  Spring3.1前处理占位符的方式  -->
+<!--    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">-->
+<!--        <property name="location" value="user.properties"/>-->
+<!--        <property name="fileEncoding" value="utf-8"/>-->
+<!--    </bean>-->
+
+    <!--  Spring3.1后处理占位符的方式  -->
+    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+        <property name="location" value="user.properties"/>
+        <property name="fileEncoding" value="utf-8"/>
+    </bean>
+
+    <bean id="user" class="org.geekbang.ioc.overview.lookup.domain.User">
+        <property name="id" value="${user.id}"/>
+        <property name="name" value="${user.heroName}"/>
+    </bean>
+
+</beans>
