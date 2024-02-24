@@ -35,4 +35,5 @@ public class XmlConfigurationMetadataDemo {
         System.out.println(user4);
 
     }
+
 }

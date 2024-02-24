@@ -23,6 +23,7 @@
         loadSidebar: true,
         auto2top: true,
         sidebarDisplayLevel: 1,
+        maxLevel: 5,
         subMaxLevel: 3,   // 目录层级
         alias: {
             '/.*/_sidebar.md': '/_sidebar.md'
@@ -36,6 +37,9 @@
             placeholder: '搜索',
             noData: '找不到结果！',
         },
+        plugins: [
+            EditOnGithubPlugin.create('https://github.com/Snailclimb/JavaGuide-Interview/blob/master/')
+        ],
         // 右上角计算字数的配置
         count:{
             countable:true,
@@ -92,6 +96,8 @@
 <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
 <!-- 主题切换 -->
 <script src="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/index.min.js"></script>
+<!-- Edit on Github-->
+<script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
 
 </body>
 </html>

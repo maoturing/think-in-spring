@@ -12,13 +12,13 @@
 
 3. 处理 Aware 接口，Spring 会检测对象如果实现了 xxxAware 接口，会调用相应的方法。BeanNameAware，BeanFactoryWawre
 
-4. BeanPostProcessor 前置处理，调用 BeanPostProcessor 的 `postProcessBeforeInitialization()`方法，会在每个 bean 实例化之前都调用
+4. BeanPostProcessor 前置处理，调用 BeanPostProcessor 的 `postProcessBeforeInitialization()`方法，会在每个 bean 初始化之前都调用
 
 5. 处理 InitializingBean 接口，Spring 会检测bean如果实现了该接口，就会调用 `afterPropertiesSet()`方法，定制初始化逻辑，在 bean 创建前调用
 
 6. 处理 init-method，`<bean init-method="xxx">`如果 Spring 发现 Bean 配置了该属性，就会调用他的配置方法，执行初始化逻辑，与`@PostConstruct`类似
 
-7. BeanPostProcessor 后置处理，调用 BeanPostProcessor 的 `postProcessAfterInitialization()`方法，会在每个 bean 实例化之后都调用
+7. BeanPostProcessor 后置处理，调用 BeanPostProcessor 的 `postProcessAfterInitialization()`方法，会在每个 bean 初始化之后都调用
 
    > **到了这一步，bean 就可以正常被使用了**
 
